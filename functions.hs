@@ -10,6 +10,10 @@ boomBang xs = [if x < 10 then "BOOM!" else "BANG!" | x <- xs,  odd x]
 
 length' xs = sum [1 | _ <-xs] 
 
+lenght' :: (Num b) => [a] -> b
+lenght' [] = 0
+length' (_:xs) =  1 + lenght' xs
+
 removeNonUpperCase  st = [ c | c <-st, c `elem` ['A'..'Z']]
 
 factorial :: (Integral a) => a -> a
