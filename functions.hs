@@ -8,11 +8,9 @@ doubleSmallNumber x = if x > 20
 
 boomBang xs = [if x < 10 then "BOOM!" else "BANG!" | x <- xs,  odd x]
 
-length' xs = sum [1 | _ <-xs] 
-
-lenght' :: (Num b) => [a] -> b
+length' :: (Num b) => [a] -> b
 length' [] = 0
-length' (_:xs) =  1 + lenght' xs
+length' (_:xs) =  1 + length' xs
 
 removeNonUpperCase  st = [ c | c <-st, c `elem` ['A'..'Z']]
 
