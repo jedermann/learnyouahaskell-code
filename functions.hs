@@ -62,7 +62,7 @@ initials :: String -> String -> String
 initials (f:_) (l:_) = [f] ++ ". " ++ [l] ++"."
 
 calcBmis :: (RealFloat a) => [(a, a)] -> [a]
-calcBmis xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2]
+calcBmis xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2, bmi >= 25.0]
 
 cylinder :: (RealFloat a) => a -> a -> a
 cylinder r h =
