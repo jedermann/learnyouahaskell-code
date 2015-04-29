@@ -38,10 +38,14 @@ capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
 
 bmiTell :: (RealFloat a) => a -> a -> String
 bmiTell weight height
-    | weight / height ^ 2 <= 18.5 = "Underweight"
-    | weight / height ^ 2 <=25.0 = "Normal"
-    | weight / height ^ 2 <= 30.0 = "Overweight"
-    | otherwise = "Overoverweight"
+    | bmi <= skinny = "Underweight"
+    | bmi <= normal  = "Normal"
+    | bmi <= overweight = "Overweight"
+    | otherwise   = "Overoverweight"
+    where bmi     = weight / height ^ 2
+          skinny  = 18.5
+          normal  = 25.0
+          overweight = 30.0
 
 max' :: (Ord a) => a -> a -> a
 max' a b
