@@ -35,3 +35,10 @@ sum' (x:xs) = x + sum' xs
 capital :: String -> String 
 capital "" = "Empty string"
 capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
+
+bmiTell :: (RealFloat a) => a -> String
+bmiTell bmi
+    | bmi <= 18.5 = "Underweight"
+    | bmi <=25.0 = "Normal"
+    | bmi <= 30.0 = "Overweight"
+    | otherwise = "Overoverweight"
