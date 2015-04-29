@@ -42,3 +42,8 @@ bmiTell weight height
     | weight / height ^ 2 <=25.0 = "Normal"
     | weight / height ^ 2 <= 30.0 = "Overweight"
     | otherwise = "Overoverweight"
+
+max' :: (Ord a) => a -> a -> a
+max' a b
+    | a > b = a
+    | otherwise = b
