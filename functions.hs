@@ -31,3 +31,7 @@ tell (x:y:_) = "This list is long. The first two elements are: " ++ show x ++ " 
 sum' :: (Num a) => [a] -> a
 sum' [] = 0
 sum' (x:xs) = x + sum' xs
+
+capital :: String -> String 
+capital "" = "Empty string"
+capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
