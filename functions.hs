@@ -36,9 +36,9 @@ capital :: String -> String
 capital "" = "Empty string"
 capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
 
-bmiTell :: (RealFloat a) => a -> String
-bmiTell bmi
-    | bmi <= 18.5 = "Underweight"
-    | bmi <=25.0 = "Normal"
-    | bmi <= 30.0 = "Overweight"
+bmiTell :: (RealFloat a) => a -> a -> String
+bmiTell weight height
+    | weight / height ^ 2 <= 18.5 = "Underweight"
+    | weight / height ^ 2 <=25.0 = "Normal"
+    | weight / height ^ 2 <= 30.0 = "Overweight"
     | otherwise = "Overoverweight"
