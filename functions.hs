@@ -11,7 +11,7 @@ boomBang xs = [if x < 10 then "BOOM!" else "BANG!" | x <- xs,  odd x]
 length' xs = sum [1 | _ <-xs] 
 
 lenght' :: (Num b) => [a] -> b
-lenght' [] = 0
+length' [] = 0
 length' (_:xs) =  1 + lenght' xs
 
 removeNonUpperCase  st = [ c | c <-st, c `elem` ['A'..'Z']]
@@ -29,3 +29,7 @@ tell [] = "The list is empty"
 tell (x:[]) = "The list has one element: " ++ show x
 tell (x:y:[]) = "The list has two elements: " ++ show x ++ " and " ++ show y
 tell (x:y:_) = "This list is long. The first two elements are: " ++ show x ++ " and " ++ show y
+
+sum' :: (Num a) => [a] -> a
+sum' [] = 0
+sum' (x:xs) = x + sum' xs
